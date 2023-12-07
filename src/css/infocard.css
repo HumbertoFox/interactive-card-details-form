@@ -18,6 +18,7 @@
     padding-left: 15px;
     border-radius: 7px;
     border: 1px solid var(--Light-grayish-violet);
+    cursor: url(https://github.com/HumbertoFox/repository/assets/126817628/ef5feb7b-75d4-47ee-a596-7be253492ebd), auto;
 }
 
 .info-card .input::placeholder {
