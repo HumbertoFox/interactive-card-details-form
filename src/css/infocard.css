@@ -1,0 +1,52 @@
+.info-card {
+    position: relative;
+}
+
+.info-card .info-p {
+    font-size: 13px;
+    color: var(--Very-dark-violet);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+.info-card .input {
+    height: 45px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-radius: 7px;
+    border: 1px solid var(--Light-grayish-violet);
+}
+
+.info-card .input::placeholder {
+    color: var(--Light-grayish-violet);
+}
+
+.info-card .input-name,
+.info-card .input-number {
+    width: 380px;
+}
+
+.info-card .div-data-code {
+    display: flex;
+    gap: 20px;
+}
+
+.info-card .div-data-code .div-data .input-month,
+.info-card .div-data-code .div-data .input-year {
+    width: 80px;
+}
+
+.info-card .div-data-code .div-data .input-year {
+    margin-left: 6px;
+}
+
+.info-card .div-code .input-code {
+    width: 190px;
+}
+
+.info-card .btn-front {
+    margin-top: 10px;
+}

@@ -1,0 +1,54 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    color: var(--White);
+}
+
+.card-front {
+    width: 448px;
+    height: 245px;
+    background-image: url(../images/bg-card-front.png);
+    padding: 28px 33px;
+    margin-left: 164px;
+}
+
+.number-card {
+    font-size: 28px;
+    letter-spacing: 3.4px;
+    margin-top: 59px;
+}
+
+.name-data {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-top: 26px;
+}
+
+.name-data p:first-child {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.name-data p:last-child {
+    font-size: 13px;
+    letter-spacing: 2.4px;
+}
+
+.card-back {
+    width: 447px;
+    height: 245px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url(../images/bg-card-back.png);
+    margin-left: 258px;
+}
+
+.card-back p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-right: 57px;
+    padding-bottom: 5px;
+}
