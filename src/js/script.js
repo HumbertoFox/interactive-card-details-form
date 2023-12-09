@@ -51,7 +51,7 @@ function insertCard() {
 
         selectSpanList[0].textContent = selectInputList[2].value;
 
-        if (selectInputList[2].value === " " || selectInputList[2].value === null || selectInputList[2].value > 12 || isNaN(selectInputList[2].value)) {
+        if (selectInputList[2].value === null || selectInputList[2].value > 12 || isNaN(selectInputList[2].value)) {
             removeMessageError(3);
             selectInputList[2].style.border = borderError;
             selectInputList[3].insertAdjacentHTML('afterend', textErrorMonth);
@@ -66,7 +66,7 @@ function insertCard() {
 
         selectSpanList[1].textContent = selectInputList[3].value;
 
-        if (selectInputList[3].value === " " || selectInputList[3].value === null || isNaN(selectInputList[3].value)) {
+        if (selectInputList[3].value === null || isNaN(selectInputList[3].value)) {
             removeMessageError(3);
             selectInputList[3].style.border = borderError;
             selectInputList[3].insertAdjacentHTML('afterend', textErrorYear);
@@ -81,7 +81,7 @@ function insertCard() {
 
         selectPList[2].textContent = selectInputList[4].value;
 
-        if (selectInputList[4].value === " " || selectInputList[4].value === null || isNaN(selectInputList[4].value)) {
+        if (selectInputList[4].value === null || isNaN(selectInputList[4].value)) {
             removeMessageError(4);
             selectInputList[4].style.border = borderError;
             selectInputList[4].insertAdjacentHTML('afterend', textErrorCode);
