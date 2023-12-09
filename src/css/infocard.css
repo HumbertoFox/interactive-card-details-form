@@ -3,22 +3,24 @@
 }
 
 .info-card .info-p {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--Very-dark-violet);
-    letter-spacing: 1.4px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 .info-card .input {
     height: 45px;
-    font-size: 18px;
+    font-family: var(--Font-Space);
+    font-size: 16px;
     letter-spacing: 1px;
-    margin-bottom: 30px;
+    cursor: url(https://github.com/HumbertoFox/repository/assets/126817628/ef5feb7b-75d4-47ee-a596-7be253492ebd), auto;
+    outline: none;
+    border: 1px solid var(--Light-grayish-violet);
     padding-left: 15px;
     border-radius: 7px;
-    border: 1px solid var(--Light-grayish-violet);
-    cursor: url(https://github.com/HumbertoFox/repository/assets/126817628/ef5feb7b-75d4-47ee-a596-7be253492ebd), auto;
+    margin-bottom: 26px;
 }
 
 .info-card .input::placeholder {
@@ -28,6 +30,13 @@
 .info-card .input-name,
 .info-card .input-number {
     width: 380px;
+}
+
+.info-card .error-message {
+    font-size: 12px;
+    color: var(--Red-Error);
+    margin-top: -18px;
+    margin-bottom: 18px;
 }
 
 .info-card .div-data-code {
@@ -49,5 +58,5 @@
 }
 
 .info-card .btn-front {
-    margin-top: 10px;
+    margin-top: 15px;
 }

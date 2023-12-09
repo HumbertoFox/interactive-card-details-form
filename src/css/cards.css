@@ -6,10 +6,13 @@
 }
 
 .card-front {
-    width: 448px;
+    width: 447px;
     height: 245px;
     background-image: url(../images/bg-card-front.png);
+    background-size: contain;
+    border-radius: 7px;
     padding: 28px 33px;
+    box-shadow: 0 50px 50px hsla(278, 68%, 11%, .1);
     margin-left: 164px;
 }
 
@@ -43,7 +46,10 @@
     align-items: center;
     justify-content: flex-end;
     background-image: url(../images/bg-card-back.png);
+    background-size: contain;
+    border-radius: 7px;
     margin-left: 258px;
+    box-shadow: 0 50px 50px hsla(278, 68%, 11%, .1);
 }
 
 .card-back p {

@@ -1,0 +1,112 @@
+@media(max-width: 1080px) {
+    .main {
+        width: 375px;
+        height: 704px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 142px;
+        background: url(../images/bg-main-mobile.png) no-repeat;
+    }
+
+    .cards {
+        position: relative;
+    }
+
+    .card-front {
+        width: 285px;
+        height: 156px;
+        position: absolute;
+        padding: 19px 20px;
+        margin-top: 126px;
+        margin-left: 17px;
+    }
+
+    .img-logo {
+        width: 52px;   
+    }
+
+    .number-card {
+        font-size: 18px;
+        letter-spacing: 2.1px;
+        margin-top: 32px;
+    }
+
+    .name-data {
+        margin-top: 16px;
+    }
+
+    .name-data p:first-child {
+        font-size: 10px;
+        letter-spacing: .6px;
+    }
+    
+    .name-data p:last-child {
+        font-size: 10px;
+        letter-spacing: .8px;
+    }
+
+    .card-back {
+        width: 285px;
+        height: 156px;
+        margin-top: 32px;
+        margin-left: 74px;
+    }
+    
+    .card-back p {
+        font-size: 9px;
+        letter-spacing: 1.4px;
+        margin-right: 36px;
+        padding-bottom: 0px;
+    }
+
+    .info-card {
+        padding-left: 24px;
+    }
+
+    .info-card .info-p {
+        padding-bottom: 8px;
+    }
+
+    .info-card .input {
+        margin-bottom: 20px;
+    }
+
+    .info-card .input-name,
+    .info-card .input-number {
+        width: 326px;
+    }
+
+    .info-card .div-data-code {
+        gap: 11px;
+    }
+
+    .info-card .div-data-code .div-data .input-month,
+    .info-card .div-data-code .div-data .input-year {
+        width: 72px;
+    }
+
+    .info-card .div-data-code .div-data .input-year {
+        margin-left: 4px;
+    }
+
+    .info-card .div-code .input-code {
+        width: 163px;
+    }
+
+    .info-card .btn-front {
+        margin-top: 9px;
+    }
+
+    .btn {
+        width: 327px;
+    }
+
+    .info-complete {
+        top: 0;
+        left: 13px;
+    }
+
+    .info-complete .img-complete {
+        margin-top: 0px;
+    }
+}
