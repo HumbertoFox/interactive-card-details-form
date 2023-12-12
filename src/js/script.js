@@ -21,8 +21,19 @@ function insertCard() {
 
         if (selectInputList[0].value === " " ||
             selectInputList[0].value === ""){
+
             const textErrorMessage = `<p class="error-message">Can't be blank</p>`;
+
             removeMessageError(0);
+            
+            selectInputList[0].style.border = borderError;
+            selectInputList[0].insertAdjacentHTML('afterend', textErrorMessage);
+        } else if (/[0-9]/.test(selectInputList[0].value)) {
+
+            const textErrorMessage = `<p class="error-message">can't contain number</p>`;
+
+            removeMessageError(0);
+            
             selectInputList[0].style.border = borderError;
             selectInputList[0].insertAdjacentHTML('afterend', textErrorMessage);
         } else {
@@ -48,13 +59,13 @@ function insertCard() {
 
     selectInputList[2].addEventListener('input', () => {
 
+        const textErrorMonth = `<p class="error-message">Report from 01 to 12</p>`;
+        
         removeEspaceInputs(2);
 
         selectSpanList[0].textContent = selectInputList[2].value;
 
-        if (selectInputList[2].value === null ||
-            selectInputList[2].value <= 0 ||
-            selectInputList[2].value > 12) {
+        if (selectInputList[2].value === null) {
             removeMessageError(3);
             selectInputList[2].style.border = borderError;
             selectInputList[3].insertAdjacentHTML('afterend', textErrorSpace);
@@ -62,6 +73,11 @@ function insertCard() {
             removeMessageError(3);
             selectInputList[2].style.border = borderError;
             selectInputList[3].insertAdjacentHTML('afterend', textErrorLyrics);
+        } else if (selectInputList[2].value <= 0 ||
+                   selectInputList[2].value > 12) {
+            removeMessageError(3);
+            selectInputList[2].style.border = borderError;
+            selectInputList[3].insertAdjacentHTML('afterend', textErrorMonth);
         } else {
             selectInputList[2].style.border = borderNormal;
             removeMessageError(3);
@@ -71,13 +87,13 @@ function insertCard() {
     selectInputList[3].addEventListener('input', () => {
 
         const anoAtual = new Date().getFullYear().toString().slice(-2);
+        const textErrorAno = `<p class="error-message">Can't be less than ${anoAtual}</p>`;
+        
         removeEspaceInputs(3);
 
         selectSpanList[1].textContent = selectInputList[3].value;
 
-        if (selectInputList[3].value <= 0 ||
-            selectInputList[3].value <= anoAtual ||
-            selectInputList[3].value === null) {
+        if (selectInputList[3].value === null) {
             removeMessageError(3);
             selectInputList[3].style.border = borderError;
             selectInputList[3].insertAdjacentHTML('afterend', textErrorSpace);
@@ -85,6 +101,11 @@ function insertCard() {
             removeMessageError(3);
             selectInputList[3].style.border = borderError;
             selectInputList[3].insertAdjacentHTML('afterend', textErrorLyrics);
+        } else if (selectInputList[3].value <= 0 ||
+                   selectInputList[3].value <= anoAtual) {
+            removeMessageError(3);
+            selectInputList[3].style.border = borderError;
+            selectInputList[3].insertAdjacentHTML('afterend', textErrorAno);
         } else {
             selectInputList[3].style.border = borderNormal;
             removeMessageError(3);
@@ -125,19 +146,44 @@ function removeMessageError(indece) {
 };
 
 function checkdEnvie() {
-    if (selectInputList[0].value === "" ) {
+
+    if (selectInputList[0].value === "") {
+
         const textErrorMessage = `<p class="error-message">Can't be blank</p>`;
+        
+        removeMessageError(0);
 
         selectInputList[0].focus();
         selectInputList[0].style.border = borderError;
         selectInputList[0].insertAdjacentHTML('afterend', textErrorMessage);
-    };
-    if (selectSpanList[0].value === null) {
+    } else if (/\d/.test(selectInputList[0].value)) {
+
         const textErrorMessage = `<p class="error-message">can't contain number</p>`;
+        
+        removeMessageError(0);
+
         selectInputList[0].focus();
         selectInputList[0].style.border = borderError;
         selectInputList[0].insertAdjacentHTML('afterend', textErrorMessage);
-    }; 
+    } else if (selectInputList[1].value === "") {
+
+        const textErrorMessage = `<p class="error-message">Can't be blank</p>`;
+        
+        removeMessageError(1);
+
+        selectInputList[1].focus();
+        selectInputList[1].style.border = borderError;
+        selectInputList[1].insertAdjacentHTML('afterend', textErrorMessage);
+    } else if (/[A-z]/.test(selectInputList[1].value)) {
+        
+        const textErrorMessage = `<p class="error-message">can't contain lyrics</p>`;
+
+        removeMessageError(1);
+
+        selectInputList[1].focus();
+        selectInputList[1].style.border = borderError;
+        selectInputList[1].insertAdjacentHTML('afterend', textErrorMessage);
+    };
     
     // isNaN(selectInputList[4].value)
     // const textErrorNumber = `<p class="error-message">Wrong format, numbers only</p>`;
