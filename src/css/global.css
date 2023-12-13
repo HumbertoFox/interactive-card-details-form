@@ -21,6 +21,13 @@ input[type=text] {
     -moz-appearance: textfield;
 }
 
+input[type=text]:focus {
+    background: linear-gradient(var(--White), var(--White)) padding-box,
+    linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
