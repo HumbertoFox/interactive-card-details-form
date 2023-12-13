@@ -35,36 +35,15 @@
         margin-top: 16px;
     }
 
-    .name-data p:first-child {
-        font-size: 10px;
-        letter-spacing: .6px;
-    }
-    
-    .name-data p:last-child {
-        font-size: 10px;
-        letter-spacing: .8px;
-    }
-
     .card-back {
         width: 285px;
         height: 156px;
         margin-top: 32px;
         margin-left: 74px;
     }
-    
-    .card-back p {
-        font-size: 9px;
-        letter-spacing: 1.4px;
-        margin-right: 36px;
-        padding-bottom: 0px;
-    }
 
     .info-card {
         padding-left: 24px;
-    }
-
-    .info-card .info-p {
-        padding-bottom: 8px;
     }
 
     .info-card .input {
@@ -80,12 +59,12 @@
         gap: 11px;
     }
 
-    .info-card .div-data-code .div-data .input-month,
-    .info-card .div-data-code .div-data .input-year {
+    .info-card .div-data .input-month,
+    .info-card .div-data .input-year {
         width: 72px;
     }
 
-    .info-card .div-data-code .div-data .input-year {
+    .info-card .div-data .input-year {
         margin-left: 4px;
     }
 

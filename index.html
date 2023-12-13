@@ -37,26 +37,20 @@
       </div>
     </div>
     <div class="info-card">
-      <p class="info-name info-p">
-        Cardholder Name
-      </p>
+      <label class="info-name info-label" for="input-name">Cardholder Name</label>
       <input class="input-name input" id="input-name" type="text" minlength="8" maxlength="16" placeholder="e.g. Jane Appleseed">
-      <p class="info-number info-p">
-        Card Number
-      </p>
+      <label class="info-number info-label" for="input-number">Card Number</label>
       <input class="input-number input" id="input-number" type="text" minlength="19" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
       <div class="div-data-code">
         <div class="div-data">
-          <p class="info-data-exp info-p">
-            Exp. Date (MM/YY)
-          </p>
-          <input class="input-month input" id="input-month" type="text" minlength="2" maxlength="2" placeholder="MM">
-          <input class="input-year input" id="input-year" type="text" minlength="2" maxlength="2" placeholder="YY">
+          <label class="info-data-exp info-label" for="input-month">Exp. Date (MM/YY)</label>
+          <div class="div-inputs-data">
+            <input class="input-month input" id="input-month" type="text" minlength="2" maxlength="2" placeholder="MM">
+            <input class="input-year input" id="input-year" type="text" minlength="2" maxlength="2" placeholder="YY">
+          </div>
         </div>
         <div class="div-code">
-          <p class="info-code info-p">
-            CVC
-          </p>
+          <label class="info-code info-label" for="input-code">CVC</label>
           <input class="input-code input" id="input-code" type="text" minlength="3" maxlength="3" placeholder="e.g. 123">
         </div>
       </div>
@@ -77,10 +71,10 @@
       </div>
     </div>
   </main>
-  <!-- <div class="attribution">
+  <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#" target="_blank">Humberto Ribeiro</a>.
-  </div> -->
+  </div>
 
   <script src="./src/js/script.js"></script>
 </body>

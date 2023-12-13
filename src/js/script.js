@@ -166,6 +166,14 @@ function checkdEnvie() {
         selectInputList[0].focus();
         selectInputList[0].style.border = borderError;
         selectInputList[0].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (selectInputList[0].value.length < 8) {
+
+        const textErrorName = `<p class="error-message">e.g. Jane Appleseed</p>`;
+        removeMessageError(0);
+
+        selectInputList[0].focus();
+        selectInputList[0].style.border = borderError;
+        selectInputList[0].insertAdjacentHTML('afterend', textErrorName);
     } else if (/[^A-z|^\s]/.test(selectInputList[0].value)) {
         
         removeMessageError(0);
@@ -188,6 +196,14 @@ function checkdEnvie() {
         selectInputList[1].focus();
         selectInputList[1].style.border = borderError;
         selectInputList[1].insertAdjacentHTML('afterend', textErrorLyrics);
+    } else if (selectInputList[1].value.length < 19) {
+
+        const textErrorAmount = `<p class="error-message">wrong e.g. 1234 5678 9123 0000</p>`;
+        removeMessageError(1);
+
+        selectInputList[1].focus();
+        selectInputList[1].style.border = borderError;
+        selectInputList[1].insertAdjacentHTML('afterend', textErrorAmount);    
     } else if (selectInputList[2].value === "" ||
                selectInputList[2].value === " " ||
                selectInputList[2].value <= 0 ||
@@ -200,20 +216,38 @@ function checkdEnvie() {
         selectInputList[3].insertAdjacentHTML('afterend', textErrorBlank);
     } else if (selectInputList[3].value === "" ||
                selectInputList[3].value === " ") {
-                removeMessageError(3);
+        removeMessageError(3);
 
-                selectInputList[3].focus();
-                selectInputList[3].style.border = borderError;
-                selectInputList[3].insertAdjacentHTML('afterend', textErrorBlank);
-    } else if (selectInputList[2].value < currentMonth &&
+        selectInputList[3].focus();
+        selectInputList[3].style.border = borderError;
+        selectInputList[3].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (selectInputList[2].value <= currentMonth &&
                selectInputList[3].value <= currentYear) {
 
-                const textErrorDate = `<p class="error-message">Card has expired</p>`;
-                removeMessageError(3);
+        const textErrorDate = `<p class="error-message">Card has expired</p>`;
+        removeMessageError(3);
 
-                selectInputList[3].focus();
-                selectInputList[3].style.border = borderError;
-                selectInputList[3].insertAdjacentHTML('afterend', textErrorDate);
+        selectInputList[3].focus();
+        selectInputList[3].style.border = borderError;
+        selectInputList[3].insertAdjacentHTML('afterend', textErrorDate);
+    } else if (selectInputList[4].value === "" ||
+               selectInputList[4].value === " ") {
+                
+        removeMessageError(4);
+                
+        selectInputList[4].focus();
+        selectInputList[4].style.border = borderError;
+        selectInputList[4].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (selectInputList[4].value.length < 3) {
+
+        const textErrorCode = `<p class="error-message">wrong e.g. 123</p>`;
+        removeMessageError(4);
+                
+        selectInputList[4].focus();
+        selectInputList[4].style.border = borderError;
+        selectInputList[4].insertAdjacentHTML('afterend', textErrorCode);
+    } else {
+        selectComplete.style.display = "block"
     };
 };
 
