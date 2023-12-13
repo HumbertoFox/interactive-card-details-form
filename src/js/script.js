@@ -3,8 +3,14 @@ const selectPList = document.querySelectorAll('.insert-p');
 const selectSpanList = document.querySelectorAll('.insert-span');
 const selectBtns = document.querySelectorAll('.btn');
 const selectComplete = document.querySelector('.info-complete');
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear().toString().slice(-2);
+const currentMonth = currentDate.getMonth()+1;
 const borderNormal = "1px solid var(--Light-grayish-violet)";
 const borderError = "1px solid var(--Red-Error)";
+const textErrorBlank = `<p class="error-message">Can't be blank</p>`;
+const textErrorLyrics = `<p class="error-message">Wrong format, numbers only</p>`;
+const textErrorNumber = `<p class="error-message">Wrong format, lyrics only</p>`;
 
 insertCard();
 
@@ -12,9 +18,6 @@ selectBtns[0].addEventListener('click', checkdEnvie);
 selectBtns[1].addEventListener('click', selectCompleteOk);
 
 function insertCard() {
-    const textErrorBlank = `<p class="error-message">Can't be blank</p>`;
-    const textErrorLyrics = `<p class="error-message">Wrong format, numbers only</p>`;
-    const textErrorNumber = `<p class="error-message">Wrong format, lyrics only</p>`;
 
     selectInputList[0].addEventListener('input', () => {
 
@@ -95,7 +98,6 @@ function insertCard() {
 
     selectInputList[3].addEventListener('input', () => {
 
-        const currentYear = new Date().getFullYear().toString().slice(-2);
         const textErrorYear = `<p class="error-message">Can't be less than ${currentYear}</p>`;
         
         removeEspaceInputs(3);
@@ -110,7 +112,7 @@ function insertCard() {
             selectInputList[3].insertAdjacentHTML('afterend', textErrorBlank);
         } else if (selectInputList[3].value <= 0 ||
                    isNaN(selectInputList[3].value) ||
-                   selectInputList[3].value <= currentYear) {
+                   selectInputList[3].value < currentYear) {
 
             removeMessageError(3);
 
@@ -156,46 +158,63 @@ function removeMessageError(indece) {
 
 function checkdEnvie() {
 
-    if (selectInputList[0].value === "") {
-
-        const textErrorMessage = `<p class="error-message">Can't be blank</p>`;
+    if (selectInputList[0].value === "" ||
+        selectInputList[0].value === " ") {
         
         removeMessageError(0);
 
         selectInputList[0].focus();
         selectInputList[0].style.border = borderError;
-        selectInputList[0].insertAdjacentHTML('afterend', textErrorMessage);
-    } else if (/\d/.test(selectInputList[0].value)) {
-
-        const textErrorMessage = `<p class="error-message">can't contain number</p>`;
+        selectInputList[0].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (/[^A-z|^\s]/.test(selectInputList[0].value)) {
         
         removeMessageError(0);
 
         selectInputList[0].focus();
         selectInputList[0].style.border = borderError;
-        selectInputList[0].insertAdjacentHTML('afterend', textErrorMessage);
-    } else if (selectInputList[1].value === "") {
-
-        const textErrorMessage = `<p class="error-message">Can't be blank</p>`;
+        selectInputList[0].insertAdjacentHTML('afterend', textErrorNumber);
+    } else if (selectInputList[1].value === "" ||
+               selectInputList[1].value === " ") {
         
         removeMessageError(1);
 
         selectInputList[1].focus();
         selectInputList[1].style.border = borderError;
-        selectInputList[1].insertAdjacentHTML('afterend', textErrorMessage);
-    } else if (/[A-z]/.test(selectInputList[1].value)) {
-        
-        const textErrorMessage = `<p class="error-message">can't contain lyrics</p>`;
+        selectInputList[1].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (/[^0-9|^\s]/.test(selectInputList[1].value)) {
 
         removeMessageError(1);
 
         selectInputList[1].focus();
         selectInputList[1].style.border = borderError;
-        selectInputList[1].insertAdjacentHTML('afterend', textErrorMessage);
+        selectInputList[1].insertAdjacentHTML('afterend', textErrorLyrics);
+    } else if (selectInputList[2].value === "" ||
+               selectInputList[2].value === " " ||
+               selectInputList[2].value <= 0 ||
+               selectInputList[2].value > 12) {
+
+        removeMessageError(3);
+
+        selectInputList[2].focus();
+        selectInputList[2].style.border = borderError;
+        selectInputList[3].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (selectInputList[3].value === "" ||
+               selectInputList[3].value === " ") {
+                removeMessageError(3);
+
+                selectInputList[3].focus();
+                selectInputList[3].style.border = borderError;
+                selectInputList[3].insertAdjacentHTML('afterend', textErrorBlank);
+    } else if (selectInputList[2].value < currentMonth &&
+               selectInputList[3].value <= currentYear) {
+
+                const textErrorDate = `<p class="error-message">Card has expired</p>`;
+                removeMessageError(3);
+
+                selectInputList[3].focus();
+                selectInputList[3].style.border = borderError;
+                selectInputList[3].insertAdjacentHTML('afterend', textErrorDate);
     };
-    
-    // isNaN(selectInputList[4].value)
-    // const textErrorNumber = `<p class="error-message">Wrong format, numbers only</p>`;
 };
 
 selectInputList[1].addEventListener('input', function (e) {
