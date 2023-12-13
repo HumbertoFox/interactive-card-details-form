@@ -35,11 +35,24 @@
         margin-top: 16px;
     }
 
+    .name-data .name-card,
+    .name-data .p-data {
+        font-size: 10px;
+        letter-spacing: .6px;
+    }
+
     .card-back {
         width: 285px;
         height: 156px;
         margin-top: 32px;
         margin-left: 74px;
+    }
+
+    .card-back .code-card {
+        font-size: 10px;
+        letter-spacing: .6px;
+        margin-right: 37px;
+        padding-bottom: 0px;
     }
 
     .info-card {

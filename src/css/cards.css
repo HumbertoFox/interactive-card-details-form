@@ -31,12 +31,12 @@
     margin-top: 26px;
 }
 
-.name-data p:first-child {
+.name-data .name-card {
     font-size: 14px;
     letter-spacing: 2px;
 }
 
-.name-data p:last-child {
+.name-data .p-data {
     font-size: 13px;
     letter-spacing: 2.4px;
 }
@@ -54,7 +54,7 @@
     box-shadow: 0 50px 50px hsla(278, 68%, 11%, .1);
 }
 
-.card-back p {
+.card-back .code-card {
     font-size: 14px;
     letter-spacing: 2px;
     margin-right: 57px;
