@@ -23,7 +23,7 @@ input[type=text] {
 
 input[type=text]:focus {
     background: linear-gradient(var(--White), var(--White)) padding-box,
-    linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+    linear-gradient(to right, var(--Gradient-from), var(--Gradient-to)) border-box;
     border: 1px solid transparent;
     border-radius: 7px;
 }

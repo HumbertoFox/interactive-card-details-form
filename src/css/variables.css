@@ -6,6 +6,8 @@
     --Dark-grayish-violet: hsl(279, 6%, 55%);
     --Very-dark-violet: hsl(278, 68%, 11%);
     --Red-Error: hsl(0, 100%, 66%);
+    --Gradient-from: hsl(249, 99%, 64%);
+    --Gradient-to: hsl(278, 94%, 30%);
 }
 
 :root {
