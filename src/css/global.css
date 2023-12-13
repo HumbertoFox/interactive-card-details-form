@@ -48,6 +48,7 @@ input::-webkit-inner-spin-button {
 }
 
 .attribution {
+    margin-top: 30px;
     font-size: 11px;
     text-align: center;
 }
