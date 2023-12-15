@@ -17,21 +17,11 @@ body {
     background: url(../images/bg-main-desktop.png) no-repeat;
 }
 
-input[type=text] {
-    -moz-appearance: textfield;
-}
-
 input[type=text]:focus {
     background: linear-gradient(var(--White), var(--White)) padding-box,
     linear-gradient(to right, var(--Gradient-from), var(--Gradient-to)) border-box;
     border: 1px solid transparent;
     border-radius: 7px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
 }
 
 .btn {
